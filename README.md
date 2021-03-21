@@ -19,12 +19,43 @@ let v = gradient1.get(0.3);
 ### gltf
 
 ```javascript
-let helper = new GLTFHelper({car: "carModel.gltf", map: "map.gltf"});
+// use callback to process models
+let helper = new GLTFHelper({car: "carModel.gltf", map: "map.gltf"}, (models) => {
+  let car = models.car;
+  let map = models.map;
+  // add models to scene here etc
+});
 
-if(helper.allLoaded()) {
-  let car = helper.models.car;
-  let map = helper.models.map;
-}
+// or add directly to some node when loaded
+let myNode = new THREE.Object3D();
+helper.load("skybox.gltf", "skybox", myNode, new THREE.Vector3(1, 2, 0));
+
+```
+
+### shadow
+
+```javascript
+let object = // some object with geometry
+let light = new THREE.DirectionalLight();
+
+let shadow = new ShadowVolumeMesh(object.geometry);
+shadow.setLight(light);
+object.add(shadow);
+
+// render with 50 % intensity
+ShadowVolumeMesh.renderWithShadows(renderer, renderer.getContext(), scene, camera, light, 0.5);
+```
+
+### stereo
+
+```javascript
+let effect = new StereoEffect(renderer);
+effect.aspect = window.innerWidth / window.innerHeight
+effect.setEyeSeparation(0.2)
+effect.setSize(window.innerWidth, window.innerHeight);
+
+// render
+effect.render(camera, scene);
 ```
 
 ### gradient
