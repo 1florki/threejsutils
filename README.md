@@ -8,14 +8,10 @@ utility classes for three.js
 
 ```javascript
 let c1 = Gradient.color("red"), c2 = Gradient.color("blue);
-
 let gradient1 = Gradient.between([c1, c2]);
 
-
 let cs1 = Gradient.colorStop(0.5, "green"), cs2 = Gradient.colorStop(2, "yellow");
-
 let gradient2 = Gradient.stop([cs1, cs2]);
-
 
 let v = gradient1.get(0.3);
 ```
@@ -26,9 +22,7 @@ let v = gradient1.get(0.3);
 let helper = new GLTFHelper({car: "carModel.gltf", map: "map.gltf"});
 
 if(helper.allLoaded()) {
-
   let car = helper.models.car;
-  
   let map = helper.models.map;
 }
 ```
@@ -46,9 +40,7 @@ Create colors either with new THREE.Color() or the static Gradient.color() like 
 
 ```javascript
 let color1 = Gradient.color(0.5, 0, 0);
-
 let color2 = Gradient.color("blue");
-
 let color3 = Gradient.color(0x04bb55);
 
 let gradient1 = new Gradient.between([color1, color2, color3]); 
@@ -63,9 +55,7 @@ Create color stops either by making your own object with "stop" and "color" key/
 
 ```javascript
 let stop1 = Gradient.colorStop(0.5, "red");
-
 let stop2 = Gradient.colorStop(0.8, 0, 1, 0); // bright green
-
 let stop3 = Gradient.colorStop(1.3, 0xccbb22);
 
 let gradient2 = Gradient.stop([stop1, stop2, stop3]);
