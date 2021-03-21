@@ -2,8 +2,38 @@
 
 utility classes for three.js
 
+## use example
+
 ### gradient
 
+```javascript
+let c1 = Gradient.color("red"), c2 = Gradient.color("blue);
+
+let gradient1 = Gradient.between([c1, c2]);
+
+
+let cs1 = Gradient.colorStop(0.5, "green"), cs2 = Gradient.colorStop(2, "yellow");
+
+let gradient2 = Gradient.stop([cs1, cs2]);
+
+
+let v = gradient1.get(0.3);
+```
+
+### gltf
+
+```javascript
+let helper = new GLTFHelper({car: "carModel.gltf", map: "map.gltf"});
+
+if(helper.allLoaded()) {
+
+  let car = helper.models.car;
+  
+  let map = helper.models.map;
+}
+```
+
+### gradient
 
 create with either {between: [array of colors]} or Gradient.between([array]) for even spacing between 0 and 1
 
