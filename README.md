@@ -58,6 +58,8 @@ effect.setSize(window.innerWidth, window.innerHeight);
 effect.render(camera, scene);
 ```
 
+## moar info
+
 ### gradient
 
 create with either {between: [array of colors]} or Gradient.between([array]) for even spacing between 0 and 1
