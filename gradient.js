@@ -44,7 +44,7 @@ gradient2.getColor(0.7) // mix between red (stop1) and green (stop2)
 
 */
 
-import { Color, Vector3 } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.module.js';
+import { Color } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.module.js';
 
 
 export class Gradient {
