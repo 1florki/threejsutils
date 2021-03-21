@@ -1,25 +1,22 @@
 import {
   GLTFLoader
 } from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/loaders/GLTFLoader.js';
-import {
-  SkeletonUtils
-} from 'https://threejsfundamentals.org/threejs/resources/threejs/r115/examples/jsm/utils/SkeletonUtils.js';
-
 
 export class GLTFHelper {
-  constructor() {
+  constructor(dict) {
     this.models = {};
     
     this.toLoad = 0;
     this.loaded = 0;
+    if(dict) this.loadMultiple(dict);
   }
   loadMultiple(dict) {
     let keys = Object.keys(dict);
     for (let k of keys) {
-      this.load(dict[k], undefined, k);
+      this.load(dict[k], k);
     }
   }
-  load(a, parent, key, pos) {
+  load(a, key, parent, pos) {
     this.toLoad += 1;
     if (this.gltfLoader == undefined) this.gltfLoader = new GLTFLoader();
 
