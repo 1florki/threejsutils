@@ -120,7 +120,8 @@ export class Gradient {
     return new Gradient({stops: arr});
   }
   static color(r, g, b) {
-    return new Color(r, g, b);
+    if(g != undefined) return new Color(r, g, b);
+    else return new Color(r);
   }
   static colorStop(stop, r, g, b) {
     return {stop: stop, color: Gradient.color(r, g, b)};
