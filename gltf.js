@@ -21,7 +21,7 @@ export class GLTFHelper {
     this.toLoad += 1;
     if (this.gltfLoader == undefined) this.gltfLoader = new GLTFLoader();
 
-    gltfLoader.load(a, (model) => {
+    this.gltfLoader.load(a, (model) => {
       model.scene.gltf = model;
       this.loaded += 1;
       if (pos != undefined) model.scene.position.copy(pos);
