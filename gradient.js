@@ -54,7 +54,7 @@ export class Gradient {
     this.colors = [];
     this.hsl = opts.hsl || false;
     
-    if(opts.stops) this.addArray(opts.stops);
+    if(opts.stops) this.addStops(opts.stops);
     if(opts.between) this.addBetween(opts.between);
   }
   
