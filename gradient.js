@@ -101,7 +101,7 @@ export class Gradient {
   getColor(v) {
     if(this.colors.length < 1) return undefined;
     
-    if(v < this.colors[0].stop) return this.colors[0].clone();
+    if(v < this.colors[0].stop) return this.colors[0].color.clone();
     
     for(let i = 0; i < this.colors.length - 1; i++) {
       let s1 = this.colors[i].stop, s2 = this.colors[i + 1].stop;
