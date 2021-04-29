@@ -31,6 +31,20 @@ export class GLTFHelper {
       if(this.done != undefined && this.allLoaded()) this.done(); 
     });
   }
+  changeMaterials(key, changeFunction) {
+    let model = this.models[key];
+    model.traverse((a) => {
+      if(a.material) {
+        a.material = changeFunction(a.material, key, model);
+      }
+    });
+  }
+  changeMaterialsAll(changeFunction) {
+    let keys = Object.keys(this.models);
+    for(let k of keys) {
+      this.changeMaterials(k, changeFunction);
+    }
+  }
   allLoaded() {
     return this.toLoad == this.loaded;
   }
