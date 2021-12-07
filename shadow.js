@@ -31,7 +31,7 @@
 */
 
 
-import { Vector3, BufferAttribute, UniformsUtils, Vector4, ShaderMaterial, ShaderLib, Group, FrontSide, DoubleSide, LessDepth, BackSide, Mesh } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.module.js';
+import { Vector3, BufferAttribute, UniformsUtils, Vector4, ShaderMaterial, ShaderLib, Group, FrontSide, DoubleSide, LessDepth, BackSide, Mesh } from 'https://cdn.skypack.dev/pin/three@v0.134.0-dfARp6tVCbGvQehLfkdx/mode=imports,min/optimized/three.js';
 
 const v0 = new Vector3();
 const v1 = new Vector3();
