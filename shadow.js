@@ -203,7 +203,7 @@ function shadowVolumeShaderMixin( shader ) {
 					projVec.w = 0.0;
 					projVec = -projVec;
 
-					float facing = dot(projVec.xyz, transformedNormal.xyz);
+					float facing = dot(projVec.xyz, objectNormal.xyz);
 					float dist = step(0.0, facing) * shadowDistance + shadowBias;
 					mvPosition.xyz += dist * projVec.xyz;
 					gl_Position = projectionMatrix * mvPosition;
